@@ -1,1 +1,1 @@
-# A little mobile wallet to witnet.in
+# A little mobile wallet to witnet.io
