@@ -8,15 +8,24 @@ class LoginState with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   bool _loggedIn = false;
+  bool _loading = false;
 
   bool isLogggedIn() => _loggedIn;
+  bool isLoading() => _loading;
+
+  FirebaseUser userLogin;
 
   void login() async {
     // _loggedIn = true;
     // notifyListeners();
-    var user = await _handleSignIn();
+    //var user = await _handleSignIn();
+    _loading = true;
+    notifyListeners();
 
-    if (user != null) {
+    userLogin = await _handleSignIn();
+
+    _loading = false;
+    if (userLogin != null) {
       _loggedIn = true;
       notifyListeners();
     } else {
@@ -42,9 +51,9 @@ class LoginState with ChangeNotifier {
 
     final FirebaseUser user =
         (await _auth.signInWithCredential(credential)).user;
-    print("signed in " + user.displayName);
-    print("user email: ${user.email}");
-    print("user photoUrl: ${user.photoUrl}");
+    // print("signed in " + user.displayName);
+    // print("user email: ${user.email}");
+    // print("user photoUrl: ${user.photoUrl}");
     return user;
   }
 }

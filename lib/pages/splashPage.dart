@@ -1,14 +1,11 @@
 import 'dart:async';
 
 import 'package:CryptoWW/pages/homePage.dart';
-import 'package:CryptoWW/pages/loginPage.dart';
 import 'package:CryptoWW/providers/login_state.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:CryptoWW/utils/delayed_animation.dart';
 import 'package:provider/provider.dart';
-
-import 'loginPage.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -38,8 +35,6 @@ class _SplashPageState extends State<SplashPage>
   @override
   Widget build(BuildContext context) {
     final state = Provider.of<LoginState>(context);
-    // print("Estado -> $state");
-    // print(state.isLogggedIn());
     final color = Colors.white;
     _scale = 1 - _controller.value;
     return MaterialApp(
@@ -131,12 +126,15 @@ class _SplashPageState extends State<SplashPage>
                       });
                     } else {
                       Timer(Duration(seconds: 1), () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginPage(),
-                          ),
-                        );
+                        Provider.of<LoginState>(context, listen: false).login();
+                        // if (state.userLogin != null) {
+                        //   Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => HomePage(),
+                        //     ),
+                        //   );
+                        // }
                       });
                     }
                   },

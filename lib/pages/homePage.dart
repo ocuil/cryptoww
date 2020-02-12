@@ -1,5 +1,7 @@
+import 'package:CryptoWW/providers/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,6 +11,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final state = Provider.of<LoginState>(context);
     return WillPopScope(
       child: Scaffold(
         backgroundColor: Color.fromRGBO(66, 165, 245, 1.0),
@@ -20,40 +23,43 @@ class _HomePageState extends State<HomePage> {
         ),
         drawer: GFDrawer(
           color: Color.fromRGBO(66, 165, 245, 1.0),
-          child: ListView(
-            padding: EdgeInsets.zero,
+          child: Column(
+            //padding: EdgeInsets.zero,
             children: <Widget>[
               GFDrawerHeader(
                 currentAccountPicture: GFAvatar(
                   radius: 80.0,
-                  backgroundImage: NetworkImage(
-                      "https://pbs.twimg.com/profile_images/1174330610946646020/TsTFs6VX_400x400.jpg"),
+                  backgroundImage: NetworkImage(state.userLogin.photoUrl),
                 ),
-                otherAccountsPictures: <Widget>[
-                  Image(
-                    image: NetworkImage(
-                        "https://www.stickpng.com/assets/images/5a7593fc64538c292dec1bbf.png"),
-                    fit: BoxFit.cover,
-                  ),
-                  GFAvatar(
-                    child: Text("alek"),
-                  )
-                ],
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('user name'),
+                    Text(state.userLogin.displayName),
+                    Text(state.userLogin.email),
                   ],
                 ),
               ),
-              ListTile(
-                title: Text('Item 1'),
-                onTap: null,
-              ),
-              ListTile(
-                title: Text('Item 2'),
-                onTap: null,
+              Container(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: Container(
+                    child: Column(
+                      children: <Widget>[
+                        Divider(),
+                        ListTile(
+                          leading: Icon(Icons.exit_to_app),
+                          title: Text('Exit'),
+                          onTap: () {
+                            Navigator.pop(context);
+                            Provider.of<LoginState>(context, listen: false)
+                                .logout();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
