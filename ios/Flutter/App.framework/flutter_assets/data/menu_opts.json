@@ -1,0 +1,20 @@
+{
+  "nombreApp": "laboratory",
+  "rutas": [
+    {
+      "ruta": "loginPage",
+      "icon": "",
+      "texto": "Login Page"
+    },
+    {
+      "ruta": "loginPage",
+      "icon": "",
+      "texto": "Login Page"
+    },
+    {
+      "ruta": "loginPage",
+      "icon": "",
+      "texto": "Login Page"
+    }
+  ]
+}
