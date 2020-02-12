@@ -14,6 +14,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final state = Provider.of<LoginState>(context);
+    if (!state.isLogggedIn()) {
+      return MaterialApp(
+        home: SplashPage(),
+      );
+    }
     return WillPopScope(
       child: Scaffold(
         backgroundColor: Color.fromRGBO(66, 165, 245, 1.0),
@@ -55,12 +60,6 @@ class _HomePageState extends State<HomePage> {
                           onTap: () {
                             Provider.of<LoginState>(context, listen: false)
                                 .logout();
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => new SplashPage(),
-                              ),
-                            );
                           },
                         ),
                       ],
