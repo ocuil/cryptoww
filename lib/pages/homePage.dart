@@ -2,6 +2,7 @@ import 'package:CryptoWW/providers/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'splashPage.dart';
 
