@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:provider/provider.dart';
 
+import 'splashPage.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -51,9 +53,14 @@ class _HomePageState extends State<HomePage> {
                           leading: Icon(Icons.exit_to_app),
                           title: Text('Exit'),
                           onTap: () {
-                            Navigator.pop(context);
                             Provider.of<LoginState>(context, listen: false)
                                 .logout();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => new SplashPage(),
+                              ),
+                            );
                           },
                         ),
                       ],

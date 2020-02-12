@@ -35,6 +35,11 @@ class _SplashPageState extends State<SplashPage>
   @override
   Widget build(BuildContext context) {
     final state = Provider.of<LoginState>(context);
+    if (state.isLogggedIn()) {
+      return MaterialApp(
+        home: HomePage(),
+      );
+    }
     final color = Colors.white;
     _scale = 1 - _controller.value;
     return MaterialApp(
@@ -127,14 +132,6 @@ class _SplashPageState extends State<SplashPage>
                     } else {
                       Timer(Duration(seconds: 1), () {
                         Provider.of<LoginState>(context, listen: false).login();
-                        // if (state.userLogin != null) {
-                        //   Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => HomePage(),
-                        //     ),
-                        //   );
-                        // }
                       });
                     }
                   },

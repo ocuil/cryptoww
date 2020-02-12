@@ -16,9 +16,6 @@ class LoginState with ChangeNotifier {
   FirebaseUser userLogin;
 
   void login() async {
-    // _loggedIn = true;
-    // notifyListeners();
-    //var user = await _handleSignIn();
     _loading = true;
     notifyListeners();
 
@@ -36,6 +33,7 @@ class LoginState with ChangeNotifier {
 
   void logout() {
     _loggedIn = false;
+    _googleSignIn.signOut();
     notifyListeners();
   }
 
@@ -51,9 +49,6 @@ class LoginState with ChangeNotifier {
 
     final FirebaseUser user =
         (await _auth.signInWithCredential(credential)).user;
-    // print("signed in " + user.displayName);
-    // print("user email: ${user.email}");
-    // print("user photoUrl: ${user.photoUrl}");
     return user;
   }
 }
