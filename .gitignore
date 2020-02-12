@@ -30,6 +30,8 @@
 .pub/
 /build/
 /data/
+/ios/Pods/FirebaseCore/FirebaseCore/Sources/Public/FIROptions.h
+/android/app/google-services.json
 
 # Web related
 lib/generated_plugin_registrant.dart
