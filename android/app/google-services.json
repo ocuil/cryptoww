@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "394990272427",
+    "firebase_url": "https://ansible-laboratory.firebaseio.com",
+    "project_id": "ansible-laboratory",
+    "storage_bucket": "ansible-laboratory.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394990272427:android:be996fb59e020911819cee",
+        "android_client_info": {
+          "package_name": "com.alejandrosl.cryptoww"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394990272427-28pfpbsrlhumg5o3056iju5rothg5bb4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alejandrosl.cryptoww",
+            "certificate_hash": "4bf92f4e00f4a2d773f4fc471ed7e20d57b0caf8"
+          }
+        },
+        {
+          "client_id": "394990272427-vfpjh2nmjj9io6kht52qf2s4u62kbvkc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHSGEknzlLOcO8Evq70s7fVdHiPq-Yr-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394990272427-vfpjh2nmjj9io6kht52qf2s4u62kbvkc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "394990272427-qp2oc5492fnels0em7bf7kol7n1jhsns.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alejandrosl.cryptoww"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
