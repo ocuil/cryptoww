@@ -40,13 +40,18 @@ class _SplashPageState extends State<SplashPage>
         home: HomePage(),
       );
     }
+    final textColor = Color.fromRGBO(69, 194, 218, 1.0);
     final color = Colors.white;
     _scale = 1 - _controller.value;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(66, 165, 245, 1.0),
-        body: Center(
+        backgroundColor: Color.fromRGBO(25, 27, 42, 1.0),
+        body: Container(
+          alignment: Alignment(0, 0),
+          // decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //         image: AssetImage('assets/splash_screen.png'))),
           child: Column(
             children: <Widget>[
               SizedBox(
@@ -63,10 +68,10 @@ class _SplashPageState extends State<SplashPage>
                     elevation: 8.0,
                     shape: CircleBorder(),
                     child: CircleAvatar(
-                      backgroundColor: Colors.grey[100],
+                      backgroundColor: Color.fromRGBO(25, 27, 42, 1.0),
                       child: new Image.asset(
                         'assets/logo.png',
-                        height: 90.0,
+                        height: 60.0,
                         fit: BoxFit.cover,
                       ),
                       radius: 50.0,
@@ -78,7 +83,7 @@ class _SplashPageState extends State<SplashPage>
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 35.0,
-                      color: color),
+                      color: textColor),
                 ),
                 delay: delayedAmount + 1000,
               ),
@@ -91,7 +96,7 @@ class _SplashPageState extends State<SplashPage>
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 40.0,
-                      color: color),
+                      color: textColor),
                 ),
                 delay: delayedAmount + 2000,
               ),
@@ -101,14 +106,14 @@ class _SplashPageState extends State<SplashPage>
               DelayedAnimation(
                 child: Text(
                   "Your mobile Wallet",
-                  style: TextStyle(fontSize: 20.0, color: color),
+                  style: TextStyle(fontSize: 20.0, color: textColor),
                 ),
                 delay: delayedAmount + 3000,
               ),
               DelayedAnimation(
                 child: Text(
                   "to the witnet network",
-                  style: TextStyle(fontSize: 20.0, color: color),
+                  style: TextStyle(fontSize: 20.0, color: textColor),
                 ),
                 delay: delayedAmount + 3000,
               ),
@@ -157,7 +162,7 @@ class _SplashPageState extends State<SplashPage>
         width: 270,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100.0),
-          color: Colors.white,
+          color: Color.fromRGBO(41, 42, 62, 1.0),
         ),
         child: Center(
           child: Text(
@@ -165,7 +170,7 @@ class _SplashPageState extends State<SplashPage>
             style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
-              color: Color.fromRGBO(66, 165, 245, 1.0),
+              color: Color.fromRGBO(69, 194, 218, 1.0),
               //color: Color(0xFF8185E2),
             ),
           ),
